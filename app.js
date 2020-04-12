@@ -6,8 +6,8 @@ const bodyParser = require('body-parser')
 
 
 
-const viewsPath = path.join(__dirname, 'templates')
-const publicPath = path.join(__dirname, 'public')
+const viewsPath = path.join(__dirname, '/templates')
+const publicPath = path.join(__dirname, '/public')
 
 const app = express()
 const port = process.env.port || 3000
@@ -24,7 +24,7 @@ app.get('', (req, res) => {
     res.render('index')
 })
 
-app.post('', (req, res) => {
+app.post('/', (req, res) => {
     fs.readFile('data/data.json', (err, d) => {
         const data = JSON.parse(d)
         const className = req.body.class
