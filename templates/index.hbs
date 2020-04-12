@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/css/style.css">
+
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+	</head>
+    
+	<body>
+        <div class="container pt-5">
+			<div class="row justify-content-between">
+				<div class="col">
+					<a class="navbar-brand" href="">CheckYour<span>Schedule.</span></a>
+				</div>
+			</div>
+		</div>
+
+		<form class="container-fluid pt-2" method="POST" action="">
+            <div class="form-group">
+                <label for="class">Class</label>
+                <select class="custom-select" id="class" name="class">
+                <option value="RR20">RR20</option>
+                <option value="RB20">RB20</option>
+                <option value="RF20CD">RF20CD</option>
+                <option value="RD20A">RD20A</option>
+                <option value="RJ20A">RJ20A</option>
+                <option value="RJ20B">RJ20B</option>
+                <option value="RN20A">RN20A</option>
+                <option value="RF21A">RF21A</option>
+                <option value="RF21B">RF21B</option>
+                <option value="RF22A">RF22A</option>
+                <option value="RF22B">RF22B</option>
+                <option value="RF22C">RF22C</option>
+                <option value="RM22A">RM22A</option>
+                <option value="RM22B">RM22B</option>
+                <option value="RD21A">RD21A</option>
+                <option value="RA21A">RA21A</option>
+                <option value="RE00A">RE00A</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Check</button>
+        </form>
+
+        <div class="container-fluid overflow-auto">
+            <table class="table table-bordered">
+            <tr>{{{day}}}</tr>
+            <tr>{{{time}}}</tr>
+            <tr>{{{classData}}}</tr>
+        </table>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright ©<script>document.write(new Date().getFullYear());</script> Made by hadyyy | Template <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				</div>
+            </div>
+        </footer>
+	</body>
+</html>
