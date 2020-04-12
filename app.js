@@ -10,7 +10,7 @@ const viewsPath = path.join(__dirname, '/templates')
 const publicPath = path.join(__dirname, '/public')
 
 const app = express()
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 
 //setting handlebars and views location
 app.set('view engine', 'hbs')
