@@ -6,9 +6,6 @@ const bodyParser = require('body-parser')
 
 const updateApp = require('./updateData')
 
-setInterval(() => {
-    updateApp()
-}, 86400000)
 
 const viewsPath = path.join(__dirname, '/templates')
 const publicPath = path.join(__dirname, '/public')
@@ -44,6 +41,9 @@ app.get('*', (req, res) => {
     res.render('errPage')
 })
 
+setInterval(() => {
+    updateApp()
+}, 86400000)
 
 app.listen(port, () => {
     console.log('The server is running on port ' + port)
