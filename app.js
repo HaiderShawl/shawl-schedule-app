@@ -42,10 +42,8 @@ app.get('*', (req, res) => {
 })
 
 setInterval(() => {
-    // updateApp()
-    console.log('running')
-}, 10)
-// }, 86400000)
+    updateApp()
+}, 86400000)
 
 app.listen(port, () => {
     console.log('The server is running on port ' + port)
