@@ -37,11 +37,8 @@ app.post('/', (req, res) => {
     })
 })
 
-app.get('*', (req, res) => {
-    res.render('errPage')
-})
 
-setInterval(() => {
+setTimeout(() => {
     updateApp()
 }, 60 * 1000)
 
