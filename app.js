@@ -20,6 +20,7 @@ app.set('views', viewsPath)
 app.use(express.static(publicPath))
 app.use(bodyParser.urlencoded({ extended: true }))
 
+updateApp()
 
 app.get('', (req, res) => {
     res.render('index')
@@ -36,11 +37,6 @@ app.post('/', (req, res) => {
         })
     })
 })
-
-
-setTimeout(() => {
-    updateApp()
-}, 60 * 1000)
 
 app.listen(port, () => {
     console.log('The server is running on port ' + port)
