@@ -6,8 +6,6 @@ const request = require('request')
 const cheerio = require('cheerio')
 const cookieParser = require('cookie-parser')
 
-const updateApp = require('./updateData')
-
 
 const viewsPath = path.join(__dirname, '/templates')
 const publicPath = path.join(__dirname, '/public')
@@ -57,7 +55,6 @@ app.post('/', (req, res) => {
         data.RD21A = cheerio.html($('#0R17').parent().children().slice(1,52)) 
         data.RA21A = cheerio.html($('#0R18').parent().children().slice(1,52)) 
         data.RE00A = cheerio.html($('#0R19').parent().children().slice(1,52))
-        console.log(data)
         
         let className = ""
         if (req.cookie) {
