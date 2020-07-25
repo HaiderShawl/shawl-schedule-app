@@ -56,7 +56,7 @@ app.get('', (req, res) => {
             data.RE00A = cheerio.html($('#0R19').parent().children().slice(1,52))
             console.log(data)
 
-            const className = req.cookie.className
+            const className = req.cookies.className
 
             res.render('index', {
                 day: data.day,
