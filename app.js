@@ -65,6 +65,26 @@ app.post('/', (req, res) => {
     }) 
 })
 
+app.get('/:className', async (req, res) => {
+    await getData((d) => {
+        console.log(d)
+        const data = d.data
+        let className = ""
+        if (req.cookie) {
+            className = req.cookie.className
+        }
+        else {
+            className = req.params.className
+        }
+        res.cookie('className', className, { expire: (1000 * 3600 * 24 * 7) + Date.now() })
+        res.render('index', {
+            day: data.day,
+            time: data.time,
+            classData: data[className]
+        })
+    }) 
+})
+
 
 app.listen(port, () => {
     console.log('The server is running on port ' + port)
