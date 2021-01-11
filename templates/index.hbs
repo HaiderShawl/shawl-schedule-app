@@ -23,20 +23,14 @@
 
 		<form class="container-fluid pt-2" method="POST" action="/">
             <div class="form-group">
-                <label for="class">Class</label>
+                <label for="class">Choose Your Class</label>
+
                 <select class="custom-select" id="class" name="class">
-                <option value="RF21A">RF21A</option>
-                <option value="RF21B">RF21B</option>
-                <option value="RR21A">RR21A</option>
-                <option value="RB21A">RB21A</option>
-                <option value="RF22A">RF22A</option>
-                <option value="RF22B">RF22B</option>
-                <option value="RF22C">RF22C</option>
-                <option value="RM22A">RM22A</option>
-                <option value="RM22B">RM22B</option>
-                <option value="RD21A">RD21A</option>
-                <option value="RA21A">RA21A</option>
+                    {{#each classID}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
                 </select>
+
             </div>
             <button class="btn btn-primary" type="submit">Check</button>
         </form>
@@ -54,7 +48,7 @@
             <div class="container-fluid">
                 <div class="col-md-12">
                     <p class="copyright">
-                    Data from rise-institute.com | Made by hadyyy
+                    Data from rise-institute.com | Made by hady
                     </p>
 				</div>
             </div>
