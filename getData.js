@@ -11,11 +11,11 @@ const getData = (callback) => {
     request(url, (error, response, body) => {
         const $ = cheerio.load(body)
         data.day = cheerio.html($('#0R1').parent().children().slice(1, 10))
-        data.time = cheerio.html($('#0R2').parent().children().slice(1, 37))
+        data.time = cheerio.html($('#0R2').parent().children().slice(1, 51))
 
         for (let i = 0; i < numClasses; i++) {
             classID[i] = cheerio.text($('#0R' + (i + 3).toString()).next())
-            eval("data." + classID[i] + " = cheerio.html($('#0R" + (i+3) + "').parent().children().slice(1, 38))") 
+            eval("data." + classID[i] + " = cheerio.html($('#0R" + (i+3) + "').parent().children().slice(1, 52))") 
         }
         callback({data : data, classID : classID})
     })
