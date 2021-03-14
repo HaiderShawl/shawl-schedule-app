@@ -5,7 +5,7 @@ const getData = (callback) => {
     console.log("Getting data...")
     const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRbgw-2QiguaDpy7rl9AZUQxtPV3T55TDseLAHBQE3z7ef0niqrasuil7Bg0V-KDzvBLCTfb5BnH-7Z/pubhtml/sheet?headers=false&gid=0'
     const data = {}
-    const numClasses = 23
+    const numClasses = 27
     const classID = []
 
     request(url, (error, response, body) => {
