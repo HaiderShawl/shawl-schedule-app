@@ -5,11 +5,11 @@ const getData = (callback) => {
     console.log("Getting data...")
     const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRbgw-2QiguaDpy7rl9AZUQxtPV3T55TDseLAHBQE3z7ef0niqrasuil7Bg0V-KDzvBLCTfb5BnH-7Z/pubhtml/sheet?headers=false&gid=0'
     const data = {}
-    const numClasses = 27
     const classID = []
 
     request(url, (error, response, body) => {
         const $ = cheerio.load(body)
+        const numClasses = $('tbody').children().length - 4
         data.day = cheerio.html($('#0R1').parent().children().slice(1, 10))
         data.time = cheerio.html($('#0R2').parent().children().slice(1, 51))
 
