@@ -10,12 +10,12 @@ const getData = (callback) => {
     request(url, (error, response, body) => {
         const $ = cheerio.load(body)
         const numClasses = $('tbody').children().length - 4
-        data.day = cheerio.html($('#0R1').parent().children().slice(1, 11))
-        data.time = cheerio.html($('#0R2').parent().children().slice(1, 52))
+        data.day = cheerio.html($('#0R1').parent().children().slice(1, 10))
+        data.time = cheerio.html($('#0R2').parent().children().slice(1, 58))
 
         for (let i = 0; i < numClasses; i++) {
             classID[i] = cheerio.text($('#0R' + (i + 3).toString()).next())
-            eval("data." + classID[i] + " = cheerio.html($('#0R" + (i+3) + "').parent().children().slice(1, 53))") 
+            eval("data." + classID[i] + " = cheerio.html($('#0R" + (i+3) + "').parent().children().slice(1, 59))") 
         }
         callback({data : data, classID : classID})
     })
