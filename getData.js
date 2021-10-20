@@ -10,7 +10,7 @@ const getData = (callback) => {
     request(url, (error, response, body) => {
         const $ = cheerio.load(body)
         const numClasses = $('tbody').children().length - 4
-        data.day = cheerio.html($('#0R1').parent().children().slice(1, 10))
+        data.day = cheerio.html($('#0R1').parent().children().slice(1, 11))
         data.time = cheerio.html($('#0R2').parent().children().slice(1, 58))
 
         for (let i = 0; i < numClasses; i++) {
